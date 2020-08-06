@@ -4,7 +4,7 @@
 Пока что, я не знаю, как это сделать
 
 ## Типы
-* [StructuredList](https://github.com/Phinnik/easy_vk#StructuredList)
+* [StructuredList](https://github.com/Masynchin/my-types-python#StructuredList)
 
 ### StructuredList
 ```python
