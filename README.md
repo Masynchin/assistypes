@@ -1,6 +1,4 @@
-my_types
-=============================
+# my_types
 
-Installation
-------------
+## Installation
 At this moment, I don't know how to do it
