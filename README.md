@@ -51,7 +51,7 @@ print(keyboard.size)
 from my_types import FloatRange
 
 for i in FloatRange(1, 10, 1.5):
-	print(i)
+    print(i)
 
 # 1.0
 # 2.5
