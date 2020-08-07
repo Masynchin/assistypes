@@ -4,57 +4,39 @@ class StructuredList(list):
 	def __init__(self, lst):
 		super().__init__(lst)
 
-	def resize(self, size: tuple):
-		new_lst = self._create_empty_list(size)
+	@property
+	def size(self):
+		return self._get_size(self)
 
-		for i, elem in enumerate(self.get_linear()):
-			indexes = self._get_position(i, size)
-			row = new_lst[indexes[0]]
-			
-			for index in indexes[1:-1]:
-				row = row[index]
-			row[indexes[-1]] = elem
+	def _get_size(self, seq):
+		if isinstance(seq[0], list):
+			return (len(seq), ) + self._get_size(seq[0])
+		else:
+			return (len(seq), )
 
-		self[:] = new_lst
+	def resize(self, size):
+		if not self.is_linear():
+			self[:] = self.get_linear()
+		temp = []
+		for num in size[:0:-1]:
+			for i in range(0, len(self), num):
+				temp.append(self[i:i+num])
+			self[:] = temp[:]
+			temp[:] = []
 
-	def _create_empty_list(self, size):
-		if len(size) == 1:
-			return [None for i in range(size[0])]
-		if len(size) == 2:
-			return [[None] * size[1] for i in range(size[0])]
-		elif len(size) > 2:
-			return [self._create_empty_list(size[1:]) for i in range(size[0])]
-
-	def _get_position(self, number, size):
-		size = self._get_size(size)
-
-		position = []
-		for n in size:
-			i = number // n
-			position.append(i)
-			number -= n * i
-		position.append(number)
-
-		return tuple(position)
-
-	def _get_size(self, size):
-		position = []
-
-		new_size = []
-		for i in range(1, len(size)):
-			new_size.append(mul(size[i:]))
-		return tuple(new_size)
+	def is_linear(self):
+		for elem in self:
+			if isinstance(elem, list):
+				return False
+		return True
 
 	def get_linear(self):
-		return self._get_linear(self)
-
-	def _get_linear(self, elem):
-		if isinstance(elem, list):
-			if len(elem) > 1:
-				return self._get_linear(elem[0]) + self._get_linear(elem[1:])
-			else:
-				return self._get_linear(elem[0])
-		return [elem]
+		while isinstance(self[0], list):
+			temp = []
+			for elem in self:
+				temp.extend(elem)
+			self[:] = temp
+		return self
 
 
 # RANGES
