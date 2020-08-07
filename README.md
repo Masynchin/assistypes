@@ -6,7 +6,7 @@
 ## Разделы
 - [Lists](https://github.com/Masynchin/my-types-python#Lists)
   - [StructuredList](https://github.com/Masynchin/my-types-python#StructuredList)
-- [Ranges](https://github.com/Masynchin/my-types-python#StructuredRanges)
+- [Ranges](https://github.com/Masynchin/my-types-python#Ranges)
   - [FloatRange](https://github.com/Masynchin/my-types-python#FloatRange)
   - [RoundedRange](https://github.com/Masynchin/my-types-python#RoundedRange)
 
@@ -41,7 +41,7 @@ print(keyboard.size)
 # (2, 2, 3)
 ```
 ### Ranges
-#### Float Range
+#### FloatRange
 ```python
 from my_types import FloatRange
 
