@@ -1,7 +1,12 @@
 # my_types
 
 ## Установка
-Пока что, я не знаю, как это сделать
+С помощью командной консоли и git
+```
+git clone https://github.com/Masynchin/my-types-python.git
+cd my-types-python
+python setup.py install
+```
 
 ## Разделы
 - [Lists](https://github.com/Masynchin/my-types-python#Lists)
