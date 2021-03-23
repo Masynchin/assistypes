@@ -11,6 +11,8 @@ python setup.py install
 ## Разделы
 - [Lists](https://github.com/Masynchin/assistypes#Lists)
   - [StructuredList](https://github.com/Masynchin/assistypes#StructuredList)
+- [Dicts](https://github.com/Masynchin/assistypes#Dicts)
+  - [AttributedDict](https://github.com/Masynchin/assistypes#AttributedDict)
 - [Ranges](https://github.com/Masynchin/assistypes#Ranges)
   - [FloatRange](https://github.com/Masynchin/assistypes#FloatRange)
   - [RoundedRange](https://github.com/Masynchin/assistypes#RoundedRange)
@@ -44,6 +46,35 @@ pprint(keyboard)
 
 print(keyboard.size)
 # (2, 2, 3)
+```
+### Dicts
+#### AttributedDict
+```python
+from assistypes.dict import AttributedDict
+
+order = AttributedDict({
+    "id": 123,
+    "customer_id": 456,
+    "products": {
+        "bread": {"cost": 50},
+        "milk": {"cost": 100},
+    }
+})
+
+total = sum(product.cost for product in order.products.values())
+# 150
+
+del order.products.bread
+order.products.cereal = {"cost": 150}
+
+# AttributedDict({
+#     "id": 123,
+#     "customer_id": 456,
+#     "products": {
+#         "cereal": {"cost": 150},
+#         "milk": {"cost": 100},
+#     }
+# })
 ```
 ### Ranges
 #### FloatRange
