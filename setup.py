@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="assistypes",
@@ -8,5 +8,5 @@ setup(
     author="Masynchin",
     author_email="masynchin@gmail.com",
     url="https://github.com/Masynchin/assistypes",
-    packages=["assistypes"],
+    packages=find_packages(exclude=["tests"]),
 )
