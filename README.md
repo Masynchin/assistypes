@@ -18,10 +18,10 @@ python setup.py install
 ### Lists
 #### StructuredList
 ```python
-from assistypes import StructuredList
+from assistypes.list import StructuredList
 from pprint import pprint
 
-keyboard = StructuredList([f'Button {i}' for i in range(1, 13)])
+keyboard = StructuredList([f"Button {i}" for i in range(1, 13)])
 
 print(keyboard.size)
 # (12,)
@@ -48,7 +48,7 @@ print(keyboard.size)
 ### Ranges
 #### FloatRange
 ```python
-from assistypes import FloatRange
+from assistypes.range import FloatRange
 
 for i in FloatRange(1, 10, 1.5):
     print(i)
@@ -73,7 +73,7 @@ for i in FloatRange(10, 1, -1.5):
 
 #### RoundedRange
 ```python
-from assistypes import FloatRange, RoundedRange
+from assistypes.range import FloatRange, RoundedRange
 
 for i in FloatRange(1, 10, 1.333):
 	print(i)
