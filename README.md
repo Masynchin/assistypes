@@ -1,24 +1,24 @@
-# my_types
+# assistypes
 
 ## Установка
 С помощью командной консоли и git
 ```
-git clone https://github.com/Masynchin/my-types-python.git
-cd my-types-python
+git clone https://github.com/Masynchin/assistypes.git
+cd assistypes
 python setup.py install
 ```
 
 ## Разделы
-- [Lists](https://github.com/Masynchin/my-types-python#Lists)
-  - [StructuredList](https://github.com/Masynchin/my-types-python#StructuredList)
-- [Ranges](https://github.com/Masynchin/my-types-python#Ranges)
-  - [FloatRange](https://github.com/Masynchin/my-types-python#FloatRange)
-  - [RoundedRange](https://github.com/Masynchin/my-types-python#RoundedRange)
+- [Lists](https://github.com/Masynchin/assistypes#Lists)
+  - [StructuredList](https://github.com/Masynchin/assistypes#StructuredList)
+- [Ranges](https://github.com/Masynchin/assistypes#Ranges)
+  - [FloatRange](https://github.com/Masynchin/assistypes#FloatRange)
+  - [RoundedRange](https://github.com/Masynchin/assistypes#RoundedRange)
 
 ### Lists
 #### StructuredList
 ```python
-from my_types import StructuredList
+from assistypes import StructuredList
 from pprint import pprint
 
 keyboard = StructuredList([f'Button {i}' for i in range(1, 13)])
@@ -48,7 +48,7 @@ print(keyboard.size)
 ### Ranges
 #### FloatRange
 ```python
-from my_types import FloatRange
+from assistypes import FloatRange
 
 for i in FloatRange(1, 10, 1.5):
     print(i)
@@ -73,7 +73,7 @@ for i in FloatRange(10, 1, -1.5):
 
 #### RoundedRange
 ```python
-from my_types import FloatRange, RoundedRange
+from assistypes import FloatRange, RoundedRange
 
 for i in FloatRange(1, 10, 1.333):
 	print(i)
